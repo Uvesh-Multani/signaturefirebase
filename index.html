@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Pad</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gifshot/0.3.2/gifshot.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Signature Pad</h1>
+        <canvas id="signature-pad" width="695" height="330"></canvas>
+        <div class="controls">
+            <input type="color" id="color-picker" value="#000000">
+            <input type="number" id="marker-size" min="1" max="20" value="2">
+            <select id="format-select">
+                <option value="image/png">PNG</option>
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/jpg">JPG</option>
+                <option value="image/gif">GIF</option>
+            </select>
+            <button id="clear-btn">Clear Signature</button>
+            <button id="save-btn">Save Signature</button>
+        </div>
+    </div>
+    <a id="download-link" style="display: none;"></a>
+    <script src="script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBNNsD97_vu7BJfNlTXSFc8ur81zLYN7a4",
+          authDomain: "signature-downloader.firebaseapp.com",
+          projectId: "signature-downloader",
+          storageBucket: "signature-downloader.appspot.com",
+          messagingSenderId: "152222466458",
+          appId: "1:152222466458:web:e0ef6f569ab614c1027a23",
+          measurementId: "G-8KP2NM38XS"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>
